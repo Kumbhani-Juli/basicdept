@@ -1,0 +1,132 @@
+.footer-container {
+  background-color: #252422;
+  color: #fff;
+  padding: 5rem;
+}
+
+.footer-content-left {
+  padding-right: 5rem !important;
+}
+
+.footer-content-left h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-content-left h2 {
+  margin-top: 7rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-content-left-input {
+  position: relative;
+  max-width: 600px;
+}
+
+.footer-content-left-input input {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+.footer-right-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.footer-content-right p {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+
+}
+
+.footer-content-right {
+  padding-right: 5rem !important;
+}
+
+.footer-content-right-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content-right-box-body h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-content-right-box-body p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 2rem;
+    /* Reduce overall padding */
+  }
+
+  .footer-content-left,
+  .footer-content-right {
+    padding-right: 0 !important;
+    /* Remove padding on smaller screens */
+    margin-bottom: 2rem;
+    /* Add spacing between sections */
+  }
+
+  .footer-content-left h1 {
+    font-size: 1.5rem;
+    /* Adjust heading size */
+  }
+
+  .footer-content-left h2 {
+    margin-top: 3rem;
+    /* Reduce margin for better spacing */
+    font-size: 0.9rem;
+  }
+
+  .footer-content-left-input input {
+    padding: 0.8rem;
+    /* Adjust input padding */
+    font-size: 0.9rem;
+    /* Smaller font size */
+  }
+
+  .footer-right-icon {
+    right: 5px;
+    /* Adjust icon position */
+  }
+
+  .footer-content-right p {
+    font-size: 1.5rem;
+    /* Reduce font size */
+    margin-bottom: 2rem;
+    /* Adjust spacing */
+  }
+
+  .footer-content-right-box {
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 2rem;
+    /* Add spacing between items */
+  }
+
+  .footer-content-right-box-body h2 {
+    font-size: 1.2rem;
+    /* Adjust heading size */
+  }
+
+  .footer-content-right-box-body p {
+    font-size: 0.9rem;
+    margin: 0.2rem;
+  }
+}
