@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
+  padding: 0.5rem 5rem;
 }
 
 .header-logo {
@@ -32,19 +32,31 @@
   display: none;
 }
 
+/* Prevent scrolling when sidebar is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Sidebar adjustments for better UX */
 .header-slider-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1000;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   background: #252422;
   color: #f9cdcd;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.header-slider-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Edge */
 }
 
 .header-slider-close {
@@ -85,7 +97,7 @@
 .header-slider-box {
   padding: 0 5px;
   border-left: 1px solid #f9cdcd;
-  width: 550px;
+  max-width: 550px;
   position: relative;
   border-right: 1px solid #f9cdcd;
 }
@@ -142,7 +154,6 @@
   .header-container nav ul {
     flex-direction: column;
     gap: 1rem;
-
   }
 
   .header-slider-img img {
@@ -158,7 +169,6 @@
     width: 100%;
     padding: 0 10px;
   }
-
 
   .header-slider-footer h2 {
     font-size: 0.8rem;
@@ -185,7 +195,6 @@
 @media (max-width: 480px) {
   .header-slider-content {
     padding: 0 1rem;
-
   }
 
   .sidebar-mobile-button {

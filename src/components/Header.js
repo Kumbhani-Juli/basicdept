@@ -16,8 +16,9 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ backgroundColor, Color, filter }) => {
 	const [showSlider, setShowSlider] = useState(false);
 	const [slidesPerView, setSlidesPerView] = useState(3);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,10 +66,24 @@ const Header = () => {
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
-
+	const toggleSlider = () => {
+		setShowSlider(!showSlider);
+		document.body.classList.toggle("no-scroll", !showSlider);
+	};
 	return (
-		<div className="header-container">
-			<img src={headerlogo} alt="Logo" className="header-logo" />
+		<div
+			className="header-container"
+			style={{
+				backgroundColor: backgroundColor,
+				color: Color,
+			}}
+		>
+			<img
+				src={headerlogo}
+				alt="Logo"
+				className="header-logo"
+				style={{ filter: filter }}
+			/>
 			<nav
 				className={`header-container-nav ${
 					isMenuOpen ? "header-nav-open" : ""
@@ -79,8 +94,12 @@ const Header = () => {
 					<li>About</li>
 					<li>News</li>
 					<li>Thinking</li>
-					<li>Careers</li>
-					<li>Contact</li>
+					<Link to="/contact">
+						<li>Contact</li>{" "}
+					</Link>
+					<Link to="/career" style={{ color: Color, textDecoration: "none" }}>
+						<li>Careers</li>
+					</Link>
 					<li
 						className="sidebar-mobile-button"
 						onClick={() => {
@@ -97,7 +116,7 @@ const Header = () => {
 				<img
 					src={headerslider}
 					alt="slider Icon"
-					onClick={() => setShowSlider(!showSlider)}
+					onClick={toggleSlider}
 					className="header-slider-icon"
 				/>
 				{showSlider && (
@@ -116,9 +135,7 @@ const Header = () => {
 							<FontAwesomeIcon
 								icon={faCircleXmark}
 								className="header-slider-close"
-								onClick={() => {
-									setShowSlider(false);
-								}}
+								onClick={toggleSlider}
 							/>
 						</div>
 						<div className="header-slider-content">

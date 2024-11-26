@@ -2,7 +2,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../assets/styles/footer.css";
-const Footer = () => {
+const Footer = ({ backgroundColor, Color }) => {
 	const FooterData = [
 		{
 			title: "Social",
@@ -37,13 +37,20 @@ const Footer = () => {
 	];
 	return (
 		<>
-			<div className="footer-container">
+			<div
+				className="footer-container"
+				style={{ backgroundColor: backgroundColor, color: Color }}
+			>
 				<div className="row mx-0 footer-content">
 					<div className="col-md-6 footer-content-left">
 						<h1>b/d®</h1>
 						<h2>Stay in the know</h2>
 						<div className="footer-content-left-input">
-							<input type="text" placeholder="Email Address" />
+							<input
+								type="text"
+								placeholder="Email Address"
+								style={{ borderColor: Color }}
+							/>
 							<FontAwesomeIcon
 								icon={faArrowRight}
 								className="footer-right-icon"
