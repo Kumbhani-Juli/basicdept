@@ -1,0 +1,59 @@
+.home-spotlight {
+  background-color: #282725;
+  color: #f9cdcd;
+  padding: 3rem 5rem;
+}
+
+.home-spotlight-left {
+  width: 800px;
+  height: fit-content;
+  position: sticky;
+  top: 60px;
+}
+
+.home-spotlight-left h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  line-height: .9;
+  display: block;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.home-spotlight-left span {
+  text-transform: uppercase;
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+.home-spotlight-left span p {
+  padding: 1rem 0 5rem 0;
+}
+
+.home-spotlight-left span button {
+  background-color: transparent;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #f9cdcd;
+  border: 1px solid #f9cdcd;
+  padding: 0.4rem 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home-spotlight {
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
+
+  .home-spotlight-left {
+    width: 100%;
+  }
+
+  .home-spotlight-left h1 {
+    font-size: 3rem;
+  }
+}

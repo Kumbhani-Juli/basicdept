@@ -1,0 +1,95 @@
+.home-client-container {
+  padding: 1rem 0 2rem 5rem;
+}
+
+.home-client-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 3rem 0;
+  text-transform: uppercase;
+}
+
+.home-client-content {
+  min-width: 400px;
+}
+
+.home-client-content h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 5rem 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.home-client-content p {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.home-client-body {
+  display: flex;
+  gap: 10rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 5rem;
+  scrollbar-color: black transparent;
+
+}
+
+.home-client-body::-webkit-scrollbar {
+  height: 5px;
+
+}
+
+.home-client-body::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+.home-client-body::-webkit-scrollbar-thumb {
+  background-color: black;
+
+  border-radius: 10px;
+
+}
+
+
+.home-client-content img {
+  height: 3rem;
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .home-client-container {
+    padding: 1rem;
+  }
+
+  .home-client-container h1 {
+    font-size: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .home-client-content {
+    min-width: 300px;
+
+  }
+
+  .home-client-content h1 {
+    font-size: 1rem;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .home-client-content p {
+    font-size: 0.9rem;
+  }
+
+  .home-client-body {
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .home-client-content img {
+    height: 2.5rem;
+
+  }
+}
