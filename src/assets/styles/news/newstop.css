@@ -1,0 +1,32 @@
+.news-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 4rem;
+}
+
+.news-top-left h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.news-top-right span {
+  font-size: 10rem;
+}
+
+@media (max-width: 768px) {
+  .news-top-container {
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+
+  .news-top-left h1 {
+    font-size: 4rem;
+  }
+
+  .news-top-right span {
+    font-size: 5rem;
+  }
+}

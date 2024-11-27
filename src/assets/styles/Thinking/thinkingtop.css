@@ -1,0 +1,85 @@
+.thinking-top-container {
+  padding: 6rem 4rem;
+  color: #f9cdcd;
+}
+
+.thinking-top-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thinking-top-title h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.thinking-top-title span {
+  font-size: 10rem;
+}
+
+.thinking-top-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.thinking-top-intro {
+  width: 30%;
+}
+
+.thinking-top-intro h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  margin: 0;
+}
+
+.thinking-top-intro p {
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .thinking-top-container {
+    padding: 1rem;
+  }
+
+  .thinking-top-title {
+    align-items: center;
+    gap: 0;
+  }
+
+  .thinking-top-title h1 {
+    font-size: 3rem;
+  }
+
+  .thinking-top-title span {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+  }
+
+  .thinking-top-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .thinking-top-intro {
+    width: 100%;
+  }
+
+  .thinking-top-intro h3 {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  }
+
+  .thinking-top-intro p {
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+}

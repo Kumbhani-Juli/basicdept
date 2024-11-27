@@ -219,12 +219,14 @@
     width: 100%;
   }
 
+  .header-container nav ul a,
   .header-container nav ul li {
     text-align: left;
     width: 100%;
+    color: #f9cdcd !important;
   }
 
-  .header-slider-img img {
+  .header-slider-box img {
     height: 250px;
     width: 100%;
   }
@@ -298,6 +300,7 @@
     left: 0;
     padding: 0 1rem;
     flex-direction: column;
+    z-index: 1000;
   }
 
   .menu-toggle-button {

@@ -78,12 +78,14 @@ const Header = ({ backgroundColor, Color, filter }) => {
 				color: Color,
 			}}
 		>
-			<img
-				src={headerlogo}
-				alt="Logo"
-				className="header-logo"
-				style={{ filter: filter }}
-			/>
+			<Link to="/">
+				<img
+					src={headerlogo}
+					alt="Logo"
+					className="header-logo"
+					style={{ filter: filter }}
+				/>
+			</Link>
 			<nav
 				className={`header-container-nav ${
 					isMenuOpen ? "header-nav-open" : ""
@@ -92,12 +94,33 @@ const Header = ({ backgroundColor, Color, filter }) => {
 				<ul>
 					<li>Work</li>
 					<li>About</li>
-					<li>News</li>
-					<li>Thinking</li>
-					<Link to="/contact">
+					<Link
+						to="/news"
+						onClick={() => setIsMenuOpen(false)}
+						style={{ color: Color, textDecoration: "none" }}
+					>
+						<li>News</li>
+					</Link>
+					<Link
+						to="/thinking"
+						onClick={() => setIsMenuOpen(false)}
+						style={{ color: Color, textDecoration: "none" }}
+					>
+						{" "}
+						<li>Thinking</li>
+					</Link>
+					<Link
+						to="/contact"
+						onClick={() => setIsMenuOpen(false)}
+						style={{ color: Color, textDecoration: "none" }}
+					>
 						<li>Contact</li>{" "}
 					</Link>
-					<Link to="/career" style={{ color: Color, textDecoration: "none" }}>
+					<Link
+						to="/career"
+						onClick={() => setIsMenuOpen(false)}
+						style={{ color: Color, textDecoration: "none" }}
+					>
 						<li>Careers</li>
 					</Link>
 					<li

@@ -1,92 +1,161 @@
-import React from "react";
+import React, { useState } from "react";
 import newsarrow from "../../assets/images/home/news-arrow.svg";
 import "../../assets/styles/home/homenewscontainer.css";
-import news1 from "../../assets/images/home/news1.webp";
-import news2 from "../../assets/images/home/news2.webp";
-import news3 from "../../assets/images/home/news3.webp";
-import news4 from "../../assets/images/home/news4.webp";
-import news5 from "../../assets/images/home/news5.webp";
-import news6 from "../../assets/images/home/news6.webp";
-import news7 from "../../assets/images/home/news7.webp";
-import news8 from "../../assets/images/home/news8.webp";
-import news9 from "../../assets/images/home/news9.webp";
-import news10 from "../../assets/images/home/news10.webp";
-const HomeNewsContainer = () => {
-	const newsData = [
-		{
-			img: news1,
-			title: "Tomorrow’s shopper: Five ways brands can reach Gen Alpha today",
-			span: "Press 10.11.24",
-		},
-		{
-			img: news2,
-			title: "Generation Alpha: Say hello to tomorrow’s shopper ",
-			span: "Press 7.22.24",
-		},
-		{
-			img: news3,
-			title:
-				"No longer the affordable option, QSRs look to connect with culture",
-			span: "Press 10.11.24",
-		},
-		{
-			img: news4,
-			title: "The Future of Fashion and AI at Glossy's Ecommerce Summit",
-			span: "Press 6.13.24",
-		},
-		{
-			img: news5,
-			title: "Retail’s new playground: where physical meets digital",
-			span: "Press 6.3.24",
-		},
-		{
-			img: news6,
-			title:
-				"Gen Alpha, the beta test for how brands can reach a new generation",
-			span: "Press 5.8.24",
-		},
-		{
-			img: news7,
-			title: "New Projects on the Podium for the 28th Webby Awards",
-			span: "Press 4.24.24",
-		},
-		{
-			img: news8,
-			title: "What Sofia Coppola Can Teach Us About Shifting Culture",
-			span: "Press 4.18.24",
-		},
-		{
-			img: news9,
-			title: "The 28TH Annual Webby Awards Nods Are In",
-			span: "Press 4.4.24",
-		},
-		{
-			img: news10,
-			title: "Are snacks the new meals in QSR?",
-			span: "Press 3.20.24",
-		},
-	];
+import newsData from "../../Data/NewsData";
+import thinkingData from "../../Data/ThinkingData";
+
+const HomeNewsContainer = ({ FilterData, thinkingFilterData }) => {
+	const [selectedNews, setSelectedNews] = useState(
+		FilterData?.[0] || thinkingFilterData?.[0] || null
+	);
+
+	const selectedNewsData = FilterData
+		? selectedNews?.title.toLowerCase() === "view all"
+			? newsData
+			: newsData?.filter(
+					(item) =>
+						item?.type.toLowerCase() === selectedNews?.title.toLowerCase()
+			  )
+		: thinkingFilterData
+		? selectedNews?.title.toLowerCase() === "view all"
+			? thinkingData
+			: thinkingData?.filter(
+					(item) =>
+						item?.type.toLowerCase() === selectedNews?.title.toLowerCase()
+			  )
+		: null;
+
 	return (
 		<>
 			<div className="home-news-container">
-				<div className="home-news-title">
-					<h1>Featured News</h1>
-					<button>view all</button>
+				<div className="home-news-container">
+					{FilterData ? (
+						<div className="home-news-filter-data">
+							{FilterData?.map((item, index) => (
+								<div
+									key={index}
+									className="filter-item"
+									style={{ cursor: "pointer" }}
+								>
+									<input
+										type="radio"
+										id={`filter-${index}`}
+										name="filter"
+										value={item?.title}
+										checked={selectedNews?.title === item?.title}
+										onChange={() => setSelectedNews(item)}
+									/>
+									<label htmlFor={`filter-${index}`}>{item?.title}</label>
+								</div>
+							))}
+						</div>
+					) : thinkingFilterData ? (
+						<div className="home-news-filter-data">
+							{thinkingFilterData?.map((item, index) => (
+								<div
+									key={index}
+									className="filter-item"
+									style={{ cursor: "pointer" }}
+								>
+									<input
+										type="radio"
+										id={`filter-thinking-${index}`}
+										name="filter"
+										value={item?.title}
+										checked={selectedNews?.title === item?.title}
+										onChange={() => setSelectedNews(item)}
+									/>
+									<label htmlFor={`filter-thinking-${index}`}>
+										{item?.title}
+									</label>
+								</div>
+							))}
+						</div>
+					) : (
+						<div className="home-news-title">
+							<h1>Featured News</h1>
+							<button>view all</button>
+						</div>
+					)}
 				</div>
-				{newsData.map((item, index) => (
-					<div className="row mx-0 home-news-content" key={index}>
-						<div className="col-md-4  home-news-left-box">
-							<img src={item?.img} className="img-fluid" />
-						</div>
-						<div className="col-md-8  home-news-right-box">
-							<div className="home-news-top-right-content">
-								<h5>{item?.title}</h5>
-								<img src={newsarrow} />
+
+				{FilterData ? (
+					<>
+						{selectedNewsData?.map((item, index) => (
+							<div className="row mx-0 home-news-content" key={index}>
+								<div className="col-md-4 home-news-left-box">
+									<img
+										src={item?.img}
+										className="img-fluid"
+										alt={item?.title}
+									/>
+								</div>
+								<div className="col-md-8 home-news-right-box">
+									<div className="home-news-top-right-content">
+										<h5>{item?.title}</h5>
+										<img src={newsarrow} alt="arrow icon" />
+									</div>
+									<span>{item?.span}</span>
+								</div>
 							</div>
-							<span>{item?.span}</span>
-						</div>
-					</div>
-				))}
+						))}
+					</>
+				) : thinkingFilterData ? (
+					<>
+						{selectedNewsData?.map((item, index) => (
+							<div
+								className="row mx-0 home-news-content"
+								style={{ borderColor: item?.borderColor }}
+								key={index}
+							>
+								<div className="col-md-4 home-news-left-box">
+									<img
+										src={item?.img}
+										className="img-fluid"
+										alt={item?.title}
+									/>
+								</div>
+								<div className="col-md-8 home-news-right-box">
+									<div className="home-news-top-right-content">
+										<h5>{item?.title}</h5>
+										<img
+											src={newsarrow}
+											alt="arrow icon"
+											style={{
+												filter:
+													"invert(85%) sepia(15%) saturate(300%) hue-rotate(310deg) brightness(100%) contrast(90%)",
+											}}
+										/>
+									</div>
+									<span>{item?.span}</span>
+								</div>
+							</div>
+						))}
+					</>
+				) : (
+					<>
+						{newsData
+							?.filter((item) => item?.title.toLowerCase() === "press")
+							.map((item, index) => (
+								<div className="row mx-0 home-news-content" key={index}>
+									<div className="col-md-4 home-news-left-box">
+										<img
+											src={item?.img}
+											className="img-fluid"
+											alt={item?.title}
+										/>
+									</div>
+									<div className="col-md-8 home-news-right-box">
+										<div className="home-news-top-right-content">
+											<h5>{item?.title}</h5>
+											<img src={newsarrow} alt="arrow icon" />
+										</div>
+										<span>{item?.span}</span>
+									</div>
+								</div>
+							))}
+					</>
+				)}
 			</div>
 		</>
 	);
