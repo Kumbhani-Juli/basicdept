@@ -1,0 +1,29 @@
+.work-top-container {
+  padding: 4rem;
+}
+
+.work-top-container h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 6rem;
+  text-transform: uppercase;
+}
+
+.work-top-container h1 span {
+  font-size: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+  .work-top-container {
+    padding: 2rem 1rem;
+  }
+
+  .work-top-container h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .work-top-container h1 span {
+    font-size: 3rem;
+  }
+}

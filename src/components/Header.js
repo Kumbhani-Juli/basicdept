@@ -92,7 +92,14 @@ const Header = ({ backgroundColor, Color, filter }) => {
 				}`}
 			>
 				<ul>
-					<li>Work</li>
+					<Link
+						to="/work"
+						onClick={() => setIsMenuOpen(false)}
+						style={{ color: Color, textDecoration: "none" }}
+					>
+						{" "}
+						<li>Work</li>
+					</Link>
 					<li>About</li>
 					<Link
 						to="/news"

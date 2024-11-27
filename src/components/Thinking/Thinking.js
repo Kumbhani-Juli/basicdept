@@ -5,7 +5,7 @@ import HomeNewsContainer from "../Home/HomeNewsContainer";
 const Thinking = () => {
 	const thinkingFilterData = [
 		{ title: "view all" },
-		{ title: "breandbeats" },
+		{ title: "brandbeats" },
 		{ title: "applied" },
 	];
 	return (

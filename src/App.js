@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
 import News from "./components/News/News";
 import Thinking from "./components/Thinking/Thinking";
+import Work from "./components/work/Work";
 function App() {
 	return (
 		<>
@@ -63,6 +64,15 @@ function App() {
 								/>
 								<Thinking />
 								<Footer backgroundColor="#fff" Color="#000" />
+							</>
+						}
+					/>{" "}
+					<Route
+						path="/work"
+						element={
+							<>
+								<Header Color="#000" />
+								<Work /> <Footer />
 							</>
 						}
 					/>
