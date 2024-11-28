@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import News from "./components/News/News";
 import Thinking from "./components/Thinking/Thinking";
 import Work from "./components/work/Work";
+import About from "./components/About/About";
 function App() {
 	return (
 		<>
@@ -63,6 +64,20 @@ function App() {
 									filter="invert(85%) sepia(15%) saturate(300%) hue-rotate(310deg) brightness(100%) contrast(90%)"
 								/>
 								<Thinking />
+								<Footer backgroundColor="#fff" Color="#000" />
+							</>
+						}
+					/>{" "}
+					<Route
+						path="/about"
+						element={
+							<>
+								<Header
+									backgroundColor="#272624"
+									Color="#f9cdcd"
+									filter="invert(85%) sepia(15%) saturate(300%) hue-rotate(310deg) brightness(100%) contrast(90%)"
+								/>
+								<About />
 								<Footer backgroundColor="#fff" Color="#000" />
 							</>
 						}
