@@ -15,8 +15,8 @@ const WorkBottom = () => {
 		tabTitle.toLowerCase() === "all work"
 			? serviceData
 			: serviceData.filter(
-					(data) => data?.type.toLowerCase() === tabTitle.toLowerCase()
-			  );
+				(data) => data?.type.toLowerCase() === tabTitle.toLowerCase()
+			);
 
 	const allWorkFilterData = [
 		{
@@ -49,7 +49,10 @@ const WorkBottom = () => {
 				<div className="work-bottom-tab-container">
 					<ul>
 						{tabData?.map((data, index) => (
-							<li key={index} onClick={() => settabTitle(data?.title)}>
+							<li key={index}
+								style={{
+									borderBottom: data?.title?.toLowerCase() === tabTitle?.toLowerCase() ? '1px solid' : '',
+								}} onClick={() => settabTitle(data?.title)}>
 								{data?.title}
 							</li>
 						))}
@@ -106,6 +109,7 @@ const WorkBottom = () => {
 												name={`radioGroup-${index}`}
 												value={item?.title}
 												className="mx-2"
+												checked={item?.title.toLowerCase() === allWorkFilterTitle}
 												onChange={() =>
 													setAllWorkFilterTitle(item?.title.toLowerCase())
 												}

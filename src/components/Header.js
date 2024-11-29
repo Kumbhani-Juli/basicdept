@@ -87,9 +87,8 @@ const Header = ({ backgroundColor, Color, filter }) => {
 				/>
 			</Link>
 			<nav
-				className={`header-container-nav ${
-					isMenuOpen ? "header-nav-open" : ""
-				}`}
+				className={`header-container-nav ${isMenuOpen ? "header-nav-open" : ""
+					}`}
 			>
 				<ul>
 					<Link
@@ -155,6 +154,7 @@ const Header = ({ backgroundColor, Color, filter }) => {
 					alt="slider Icon"
 					onClick={toggleSlider}
 					className="header-slider-icon"
+					style={{ filter: filter }}
 				/>
 				{showSlider && (
 					<div className="header-slider-container">

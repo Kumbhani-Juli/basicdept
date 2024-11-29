@@ -135,7 +135,7 @@ const HomeNewsContainer = ({ FilterData, thinkingFilterData }) => {
 				) : (
 					<>
 						{newsData
-							?.filter((item) => item?.title.toLowerCase() === "press")
+							?.filter((item) => item?.type.toLowerCase() === "press")
 							.map((item, index) => (
 								<div className="row mx-0 home-news-content" key={index}>
 									<div className="col-md-4 home-news-left-box">

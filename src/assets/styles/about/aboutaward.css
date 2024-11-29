@@ -10,7 +10,6 @@
   text-transform: uppercase;
 }
 
-
 .about-award-right-content h1 {
   font-size: 2rem;
   line-height: 2.3rem;
@@ -40,11 +39,24 @@
   text-transform: uppercase;
   margin-top: 2rem;
 }
+.award-tooltip {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.tooltip-img {
+  /* max-width: 200px; */
+  height: 600px;
+  border-radius: 8px;
+}
 
 @media (max-width: 768px) {
   .about-award-container {
     padding: 2rem 1rem;
-
+  }
+  .award-tooltip {
+    display: none;
   }
 
   .about-award-left-content,
@@ -74,6 +86,5 @@
     font-size: 0.7rem;
 
     padding: 0.2rem 0.8rem;
-
   }
 }

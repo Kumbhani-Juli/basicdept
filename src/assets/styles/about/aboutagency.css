@@ -15,7 +15,8 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   height: auto;
-  filter: invert(85%) sepia(15%) saturate(300%) hue-rotate(310deg) brightness(100%) contrast(90%);
+  filter: invert(85%) sepia(15%) saturate(300%) hue-rotate(310deg)
+    brightness(100%) contrast(90%);
 }
 
 .agency-section {
@@ -29,9 +30,9 @@
 }
 
 .agency-right-section {
-  display: flex;
-  gap: 10rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5rem;
 }
 
 .agency-right-content-body {
@@ -70,24 +71,20 @@
   }
 
   .agency-right-section {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .agency-right-content-body {
-    position: relative;
+    width: 100%;
   }
 
   .agency-right-content-body span {
     font-size: 1.5rem;
-
   }
 
   .agency-right-content-body h1 {
-    font-size: 1.5rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-bottom: 0;
+    display: none;
   }
 
   .agency-right-content-body p {

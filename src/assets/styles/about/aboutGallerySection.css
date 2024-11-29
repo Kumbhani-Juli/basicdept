@@ -1,0 +1,34 @@
+.about-page-gallery-section-container {
+  padding: 5rem;
+  background-color: #282725;
+}
+
+.about-page-gallery-section-content {
+  height: 1100px;
+  position: relative;
+  border-top: 1px solid #f9cdcd;
+  padding: 5rem 0;
+}
+
+.about-page-gallery-section-content img {
+  height: 700px;
+  cursor: pointer;
+  transition: z-index 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .about-page-gallery-section-container {
+    padding: 3rem 1rem;
+  }
+  .about-page-gallery-section-content {
+    height: auto;
+  }
+  .about-page-gallery-section-content img {
+    height: auto;
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin-bottom: 1rem;
+    transition: none;
+  }
+}

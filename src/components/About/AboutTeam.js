@@ -67,7 +67,7 @@ const AboutTeam = () => {
 				</div>
 				<div className="about-team-image-container">
 					{teamData.map((item, index) => (
-						<div className="about-team-image">
+						<div className="about-team-image" key={index}>
 							<img src={item?.img} alt="Team" className="img-fluid" />
 							<p>{item?.name}</p>
 						</div>
